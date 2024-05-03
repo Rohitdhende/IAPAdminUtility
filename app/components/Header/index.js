@@ -16,7 +16,7 @@ import { usePathname } from "next/navigation";
 const pages = ["Reports", "Dashboard"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-function Header() {
+const Header = () => {
   const pathname = usePathname();
   const shouldHide = pathname.includes("/signin");
 
@@ -164,5 +164,5 @@ function Header() {
       </AppBar>
     );
   }
-}
+};
 export default Header;

@@ -1,11 +1,13 @@
-import React from 'react'
-import DashboardWrapper from '../wrappers/DashboardWrapper';
-import Box from '@mui/material/Box'
+import React from "react";
+import DashboardWrapper from "../wrappers/DashboardWrapper";
+import Box from "@mui/material/Box";
 
-const adminutility = () => {
+const AdminUtility = () => {
   return (
-    <Box><DashboardWrapper/></Box>
-  )
-}
+    <Box>
+      <DashboardWrapper />
+    </Box>
+  );
+};
 
-export default adminutility
+export default AdminUtility;

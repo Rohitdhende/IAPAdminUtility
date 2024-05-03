@@ -122,7 +122,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function DashboardWrapper() {
+const DashboardWrapper = () => {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
   const [selectedOption, setSelectedOption] = React.useState("Order Details");
@@ -190,7 +190,7 @@ export default function DashboardWrapper() {
             alignItems="center"
             justifyContent="center"
           >
-            <Image src={logo} height={80} alt="logo" />
+            <Image src={logo} height={80} alt="logo" priority/>
             {/* <Typography width={1} textAlign="center">
               {" "}
               Admin Utility
@@ -237,6 +237,7 @@ export default function DashboardWrapper() {
                       <ListItemButton
                         sx={{ pl: 4 }}
                         onClick={() => setSelectedOption(`${text} > ${option}`)}
+                        key={index}
                       >
                         <ListItemText primary={option} />
                       </ListItemButton>
@@ -307,3 +308,5 @@ export default function DashboardWrapper() {
     </Box>
   );
 }
+
+export default DashboardWrapper

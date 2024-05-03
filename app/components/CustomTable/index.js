@@ -9,7 +9,7 @@ import LastPageRoundedIcon from "@mui/icons-material/LastPageRounded";
 import ChevronLeftRoundedIcon from "@mui/icons-material/ChevronLeftRounded";
 import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
 
-export default function CustomTable() {
+const CustomTable = () => {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
@@ -85,7 +85,7 @@ export default function CustomTable() {
       </table>
     </Root>
   );
-}
+};
 
 function createData(column1, column2, fat) {
   return { column1, column2, fat };
@@ -93,17 +93,17 @@ function createData(column1, column2, fat) {
 
 const rows = [
   createData("Jan-2023", 305),
-  createData("Feb-2023", 452 ),
-  createData("Mar-2023", 262 ),
+  createData("Feb-2023", 452),
+  createData("Mar-2023", 262),
   createData("Apr-2023", 159),
-  createData("May-2023", 356 ),
+  createData("May-2023", 356),
   createData("Jun-2023", 408),
   createData("Jul-2023", 237),
   createData("Aug-2023", 375),
-  createData("Sep-2023", 518 ),
+  createData("Sep-2023", 518),
   createData("Oct-2023", 392),
   createData("Nov-2023", 31),
-  createData("Dec-2023", 360 ),
+  createData("Dec-2023", 360),
 ];
 
 const blue = {
@@ -250,3 +250,5 @@ const CustomTablePagination = styled(TablePagination)(
   }
   `
 );
+
+export default CustomTable;

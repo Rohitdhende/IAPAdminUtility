@@ -9,7 +9,7 @@ import { styled } from "@mui/system";
 import { CssTransition } from "@mui/base/Transitions";
 import { PopupContext } from "@mui/base/Unstable_Popup";
 
-export default function CustomDropDown({ options }) {
+const CustomDropDown = ({ options }) => {
   const [selectedMenu, setSelectedMenu] = React.useState(options[0]);
   const createHandleMenuClick = (menuItem) => {
     setSelectedMenu(menuItem);
@@ -20,7 +20,10 @@ export default function CustomDropDown({ options }) {
   return (
     <Dropdown>
       <MenuButton>{selectedMenu}</MenuButton>
-      <Menu slots={{ listbox: AnimatedListbox }} style={{zIndex:'2001', maxWidth:'300px'}}>
+      <Menu
+        slots={{ listbox: AnimatedListbox }}
+        style={{ zIndex: "2001", maxWidth: "300px" }}
+      >
         {options?.map((option, index) => {
           return (
             <MenuItem key={index} onClick={() => createHandleMenuClick(option)}>
@@ -31,7 +34,7 @@ export default function CustomDropDown({ options }) {
       </Menu>
     </Dropdown>
   );
-}
+};
 
 const blue = {
   50: "#F0F7FF",
@@ -184,3 +187,5 @@ const MenuButton = styled(BaseMenuButton)(
   }
   `
 );
+
+export default CustomDropDown;
