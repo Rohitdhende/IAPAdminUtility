@@ -1,7 +1,7 @@
-import Header from "./components/Header";
 import Box from "@mui/material/Box";
 import "./globals.css";
 import ThemeRegistry from "./ThemeRegistry";
+import ReactQueryClientProvider from "./ReactQueryClientProvider";
 
 export const metadata = {
   title: "Motilal Oswal Admin Utility",
@@ -10,13 +10,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <ThemeRegistry>
-        <body>
-      {/* <Header /> */}
-          <Box >{children}</Box>
-        </body>
-      </ThemeRegistry>
-    </html>
+    <ReactQueryClientProvider>
+      <html lang="en">
+        <ThemeRegistry>
+          <body>
+            {/* <Header /> */}
+            <Box>{children}</Box>
+          </body>
+        </ThemeRegistry>
+      </html>
+    </ReactQueryClientProvider>
   );
 }

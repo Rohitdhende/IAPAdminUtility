@@ -28,7 +28,7 @@ const SignIn = () => {
     >
       {/* <Avatar sx={{ m: 1, bgcolor: "secondary.main" }} className="rsd"> */}
       {/* <LockOutlinedIcon /> */}
-      <Image src={logo} height={100} alt="logo" priority/>
+      <Image src={logo} height={100} alt="logo" priority />
       {/* </Avatar> */}
       <Typography component="h1" variant="h5">
         Sign in
@@ -92,5 +92,4 @@ const SignIn = () => {
   );
 };
 
-
-export default SignIn
+export default SignIn;

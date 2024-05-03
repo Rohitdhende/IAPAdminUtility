@@ -26,6 +26,7 @@ import logo from "../../assets/images/logo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import CustomTable from "../../components/CustomTable";
+import { useQuery } from "@tanstack/react-query";
 
 const drawerWidth = 240;
 
@@ -143,6 +144,13 @@ const DashboardWrapper = () => {
       setIsCollapse(!isCollapse);
     }
   };
+
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["products"],
+    queryFn: () =>
+      fetch("https://fakestoreapi.com/products/1").then((res) => res.json()),
+  });
+  console.log("data", data, "loading", isLoading, "error", isError);
 
   return (
     <Box sx={{ display: "flex", "::-webkit-scrollbar": { display: "none" } }}>

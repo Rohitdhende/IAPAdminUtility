@@ -14,9 +14,6 @@ const CustomDropDown = ({ options }) => {
   const createHandleMenuClick = (menuItem) => {
     setSelectedMenu(menuItem);
   };
-
-  console.log("rsd", options);
-
   return (
     <Dropdown>
       <MenuButton>{selectedMenu}</MenuButton>
