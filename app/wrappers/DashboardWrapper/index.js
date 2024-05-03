@@ -1,5 +1,5 @@
 "use client";
-import * as React from "react";
+import { useState } from "react";
 import { styled, useTheme, alpha } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -124,8 +124,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const DashboardWrapper = () => {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(true);
-  const [selectedOption, setSelectedOption] = React.useState("Order Details");
+  const [open, setOpen] = useState(true);
+  const [selectedOption, setSelectedOption] = useState("Order Details");
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -135,7 +135,7 @@ const DashboardWrapper = () => {
     setOpen(false);
   };
 
-  const [isCollapse, setIsCollapse] = React.useState(true);
+  const [isCollapse, setIsCollapse] = useState(true);
 
   const handleClick = (option) => {
     setSelectedOption(option);
@@ -145,12 +145,8 @@ const DashboardWrapper = () => {
   };
 
   return (
-    <Box sx={{ display: "flex" ,"::-webkit-scrollbar": { display: "none" }}}>
-  
-      <AppBar
-        position="fixed"
-        open={open}
-      >
+    <Box sx={{ display: "flex", "::-webkit-scrollbar": { display: "none" } }}>
+      <AppBar position="fixed" open={open}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -173,16 +169,16 @@ const DashboardWrapper = () => {
           "& .MuiDrawer-paper": {
             width: drawerWidth,
             boxSizing: "border-box",
-            msOverflowStyle: 'none', // for IE and Edge
-            scrollbarWidth: 'none', // for Firefox
-            '&::-webkit-scrollbar': { display: 'none' }
+            msOverflowStyle: "none", // for IE and Edge
+            scrollbarWidth: "none", // for Firefox
+            "&::-webkit-scrollbar": { display: "none" },
           },
         }}
         variant="persistent"
         anchor="left"
         open={open}
       >
-        <DrawerHeader sx={{minHeight:'90px !important'}}>
+        <DrawerHeader sx={{ minHeight: "90px !important" }}>
           <Box
             display="flex"
             width={1}
@@ -190,7 +186,7 @@ const DashboardWrapper = () => {
             alignItems="center"
             justifyContent="center"
           >
-            <Image src={logo} height={80} alt="logo" priority/>
+            <Image src={logo} height={80} alt="logo" priority />
             {/* <Typography width={1} textAlign="center">
               {" "}
               Admin Utility
@@ -264,7 +260,7 @@ const DashboardWrapper = () => {
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
-        <Box display="flex" gap={2} flexWrap='wrap'>
+        <Box display="flex" gap={2} flexWrap="wrap">
           <Box display="flex" alignItems="center" gap={1}>
             <Typography>Product:</Typography>
             <CustomDropDown
@@ -277,28 +273,26 @@ const DashboardWrapper = () => {
               ]}
             />
           </Box>
-          
+
           <Box display="flex" alignItems="center" gap={1}>
             <Typography>Execute Status:</Typography>
             <CustomDropDown options={["All", "Y", "N"]} />
           </Box>
-          <Box display="flex" alignItems="center" gap={1} >
+          <Box display="flex" alignItems="center" gap={1}>
             <Typography>Page Size:</Typography>
             <CustomDropDown options={["100", "500", "1000"]} />
           </Box>
           <Box>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
+            <Search>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ "aria-label": "search" }}
+              />
+            </Search>
           </Box>
-
-         
         </Box>
         <Divider />
         <Box>
@@ -307,6 +301,6 @@ const DashboardWrapper = () => {
       </Main>
     </Box>
   );
-}
+};
 
-export default DashboardWrapper
+export default DashboardWrapper;

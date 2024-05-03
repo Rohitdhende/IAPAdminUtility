@@ -1,5 +1,5 @@
 "use client";
-import * as React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Dropdown } from "@mui/base/Dropdown";
 import { Menu } from "@mui/base/Menu";
@@ -10,7 +10,7 @@ import { CssTransition } from "@mui/base/Transitions";
 import { PopupContext } from "@mui/base/Unstable_Popup";
 
 const CustomDropDown = ({ options }) => {
-  const [selectedMenu, setSelectedMenu] = React.useState(options[0]);
+  const [selectedMenu, setSelectedMenu] = useState(options[0]);
   const createHandleMenuClick = (menuItem) => {
     setSelectedMenu(menuItem);
   };
